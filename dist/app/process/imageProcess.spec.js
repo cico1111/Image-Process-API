@@ -45,10 +45,13 @@ describe('imageProcess test', function () {
         var imgFile;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, (0, imageProcess_1.default)("fjord", "200", "200")];
+                case 0: return [4 /*yield*/, (0, imageProcess_1.default)('fjord', '200', '200')];
                 case 1:
                     imgFile = _a.sent();
-                    expect(imgFile).toEqual({ filename: "fjord.thumb.png", url: "src/assets/thumb/" });
+                    expect(imgFile).toEqual({
+                        filename: 'fjord.thumb.png',
+                        url: "src/assets/thumb/",
+                    });
                     return [2 /*return*/];
             }
         });

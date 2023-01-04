@@ -47,13 +47,12 @@ images.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, f
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                filename = req.query["filename"];
+                filename = req.query['filename'];
                 if (!filename) return [3 /*break*/, 5];
                 _a.label = 1;
             case 1:
                 _a.trys.push([1, 3, , 4]);
-                return [4 /*yield*/, (0, imageProcess_1.default)(req.query["filename"], req.query["width"], req.query["height"])
-                        .then(function (data) {
+                return [4 /*yield*/, (0, imageProcess_1.default)(req.query['filename'], req.query['width'], req.query['height']).then(function (data) {
                         if (data)
                             res.sendFile(data.filename, { root: data.url });
                     })];
@@ -65,7 +64,7 @@ images.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, f
                 console.log(error_1);
                 return [3 /*break*/, 4];
             case 4: return [3 /*break*/, 6];
-            case 5: return [2 /*return*/, res.status(400).send("filename is required")];
+            case 5: return [2 /*return*/, res.status(400).send('filename is required')];
             case 6: return [2 /*return*/];
         }
     });
