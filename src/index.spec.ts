@@ -12,7 +12,6 @@ describe('endpoint', () => {
   });
   it('calls get images without filename ', async () => {
     const response = await request.get('/api/images/?width=200&height=200');
-
     expect(response.status).toBe(400);
   });
 });
