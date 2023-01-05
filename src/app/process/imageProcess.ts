@@ -1,7 +1,7 @@
 import sharp from 'sharp';
 
 const thumbImage = async (filename: string, width: number, height: number) => {
-  console.log("this is sharp function")
+
   try {
     await sharp(`./src/assets/full/${filename}.jpg`)
       .resize(width, height)
