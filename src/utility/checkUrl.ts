@@ -12,7 +12,7 @@ const checkUrl = (filename: string, width: string, height: string): string => {
   if (!filename) {
     message = 'filename is required';
   } else {
-    const result = filenames.some((x) => x == filename);
+    const result = filenames.some((x) :boolean=> x == filename);
     if (!result) {
       message =
         'filename must be one of  {encenadaport,fjord,icelandwaterfall,palmtunnel,santamonica}';

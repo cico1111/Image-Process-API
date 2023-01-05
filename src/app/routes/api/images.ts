@@ -5,7 +5,7 @@ import thumbImage from '../../process/imageProcess';
 
 const images = express.Router();
 
-images.get('/', async (req, res) => {
+images.get('/', async (req, res):Promise<void> => {
   const filename = req.query['filename'] as string;
   const width = parseInt(req.query['width'] as string);
   const height = parseInt(req.query['height'] as string);
@@ -28,7 +28,7 @@ images.get('/', async (req, res) => {
       res.sendFile(thumbFileName, { root: `src/assets/thumb/` });
     } else {
       try {
-        await thumbImage(filename, width, height).then(() => {
+        await thumbImage(filename, width, height).then(():void => {
           res.sendFile(thumbFileName, { root: `src/assets/thumb/` });
         });
       } catch (error) {
@@ -36,7 +36,7 @@ images.get('/', async (req, res) => {
       }
     }
   } else {
-    return res.status(400).send(message);
+    res.status(400).send(message);
   }
 });
 
