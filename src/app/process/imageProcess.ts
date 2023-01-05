@@ -1,11 +1,11 @@
 import sharp from 'sharp';
 
-const thumbImage = async (filename: string, width: string, height: string) => {
+const thumbImage = async (filename: string, width: number, height: number) => {
+  console.log("this is sharp function")
   try {
     await sharp(`./src/assets/full/${filename}.jpg`)
-      .resize(parseInt(width), parseInt(height))
-      .toFile(`./src/assets/thumb/${filename}.thumb.png`);
-    return { filename: `${filename}.thumb.png`, url: `src/assets/thumb/` };
+      .resize(width, height)
+      .toFile(`./src/assets/thumb/${filename}-${width}-${height}.thumb.png`);       
   } catch (error) {
     console.log(error);
   }
